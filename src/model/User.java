@@ -1,4 +1,6 @@
-public class User {
+package model;
+
+public abstract class User {
 
     static int ID_INCREMENTAL = 0;
 
@@ -69,7 +71,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "model.User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
@@ -77,4 +79,6 @@ public class User {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+    public abstract void showDataUser();
 }

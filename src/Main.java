@@ -1,3 +1,8 @@
+import model.Doctor;
+import model.ISchedulable;
+import model.Patient;
+import model.User;
+
 import javax.print.Doc;
 
 import java.util.Date;
@@ -9,9 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Doctor myDoctor = new Doctor();
-        /*Doctor myDoctor = new Doctor();
-        Doctor myDoctor2 = new Doctor();
+//        model.Doctor myDoctor = new model.Doctor();
+        /*model.Doctor myDoctor = new model.Doctor();
+        model.Doctor myDoctor2 = new model.Doctor();
         myDoctor.name = "HOLA";
         myDoctor.showName();
         myDoctor.showId();
@@ -28,14 +33,36 @@ public class Main {
         doctora.addAvailableAppointment(new Doctor.AvailableAppointment(
                 new GregorianCalendar(2022, 07,15).getTime(), "Afternoon"));
 
+        doctora.showDataUser();
+        paciente.showDataUser();
+        // Clase anonima
+        User user = new User("Luis", "l@test.com") {
+            @Override
+            public void showDataUser() {
+                System.out.println("HOLA USSER");
+            }
+        };
+        user.showDataUser();
+
+        ISchedulable iSchedulable = new ISchedulable() {
+            @Override
+            public void schedule(Date date, String time) {
+                System.out.println("Bien");
+            }
+        };
+
         /*
-        for (Doctor.AvailableAppointment ap: doctora.getAvaliableAppointments()) {
+        for (model.Doctor.AvailableAppointment ap: doctora.getAvaliableAppointments()) {
             System.out.println(ap.getDate());
         }
          */
         // Actualmente no es necesario colocar el toString
-        System.out.println(paciente.toString());
-        System.out.println(doctora);
+        /*
+            System.out.println(paciente.toString());
+            System.out.println(doctora);
+        */
+
+
 
     }
 

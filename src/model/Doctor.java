@@ -1,12 +1,14 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Doctor extends User {
+public class Doctor extends User implements ISchedulable {
 
     private String speciality;
 
-    Doctor(String name, String email){
+    public Doctor(String name, String email){
         super(name, email);
     }
 
@@ -22,11 +24,22 @@ public class Doctor extends User {
 
     @Override
     public String toString() {
-        return super.toString()+" Doctor{" +
+        return super.toString()+" model.Doctor{" +
                 "speciality='" + speciality + '\'' +
                 '}'
                 + ap.toString()
                 ;
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Hospital: Cruz Roja");
+        System.out.println("Area: Urulogia");
+    }
+
+    @Override
+    public void schedule(Date date, String time) {
+
     }
 
     public static class AvailableAppointment {
